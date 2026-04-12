@@ -50,10 +50,10 @@ Open the .env file in the root directory and ensure your credentials and test nu
 
 env
 
-User=1000000077
-Password=Password1000@2
-Customer=7701111111
-Agent=1000000066
+User=YOUR_USER
+Password=YOUR_PASSWORD
+Customer=YOUR_CUSTOMER
+Agent=YOUR_AGENT
 Step 3: Run your Tests!
 Open a PowerShell terminal, navigate into the extracted folder, and move into the scripts directory:
 
