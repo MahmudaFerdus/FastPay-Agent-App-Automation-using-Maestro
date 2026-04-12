@@ -1,0 +1,4 @@
+appId: com.fastpay.agent
+---
+- tapOn: Navigate up
+- tapOn: LOG OUT

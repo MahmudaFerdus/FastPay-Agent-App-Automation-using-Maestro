@@ -1,0 +1,31 @@
+appId: com.fastpay.agent
+---
+- assertVisible: FastpayAgent
+- tapOn: "FastpayAgent"
+- waitForAnimationToEnd
+- assertVisible: Mobile Number
+
+# --- TYPE MOBILE NUMBER ---
+- tapOn: Mobile Number
+- inputText: ${User}
+- pressKey: Enter # Usually helps move to the next field safely
+- waitForAnimationToEnd
+
+# --- TYPE PASSWORD SAFELY ---
+# Use whichever selector works best for you here
+- tapOn: "Enter your password"
+- waitForAnimationToEnd # Wait for the keyboard to fully pop up!
+
+- eraseText # This is a pro-trick. It forces the field to gain proper cursor focus before typing.
+- inputText: ${Password}
+- pressKey: back # Hide the keyboard so it doesn't block the Login button
+
+# --- LOG IN ---
+- tapOn: LOGIN
+
+# --- CRITICAL: WAIT FOR DASHBOARD ---
+# Do NOT finish the login helper until the app actually loads the dashboard!
+# This gives the app up to 10 seconds to process the login over the internet.
+- extendedWaitUntil:
+    visible: "Sell Balance"
+    timeout: 10000

@@ -1,0 +1,41 @@
+appId: com.fastpay.agent
+tags:
+  - regression
+  - p1
+---
+- runFlow: ../../flows/login_helper.yaml
+
+- tapOn:
+    id: "menuTransferMoneyIcon"
+- tapOn: Mobile Number
+- inputText: ${Agent}
+- pressKey: back
+- tapOn:
+    id: "tvMoneyAmount"
+- inputText: "260"
+- tapOn:
+    id: "confirmBtn"
+- tapOn: PROCEED
+
+- assertVisible:
+    id: editTextPin1
+
+- tapOn:
+    id: "editTextPin1"
+- inputText: "1"
+- tapOn:
+    id: "editTextPin2"
+- inputText: "2"
+- tapOn:
+    id: "editTextPin3"
+- inputText: "3"
+- tapOn:
+    id: "editTextPin4"
+- inputText: "4"
+- waitForAnimationToEnd
+- tapOn: VIEW INVOICE
+
+- assertVisible:
+    id: "nav_host_dashboard"
+
+- runFlow: ../../flows/teardown_helper.yaml

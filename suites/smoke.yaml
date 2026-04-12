@@ -1,0 +1,4 @@
+appId: com.fastpay.agent
+---
+- runFlow: ../e2e/sellbalance/sell_balance_success.yaml
+- runFlow: ../e2e/transfermoney/transfer_success.yaml

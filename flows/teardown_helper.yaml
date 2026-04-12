@@ -1,0 +1,5 @@
+appId: com.fastpay.agent
+---
+# This ensures a completely fresh state for the next test
+- stopApp
+- clearState

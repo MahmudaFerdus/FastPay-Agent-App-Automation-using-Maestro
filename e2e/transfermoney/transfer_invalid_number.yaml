@@ -1,0 +1,22 @@
+appId: com.fastpay.agent
+tags:
+  - regression
+  - negative
+---
+- runFlow: ../../flows/login_helper.yaml
+
+- tapOn:
+    id: "menuTransferMoneyIcon"
+- tapOn: Mobile Number
+- inputText: "0000000000" # ❌ Invalid Agent
+- pressKey: back
+- tapOn:
+    id: "tvMoneyAmount"
+- inputText: "250"
+- tapOn:
+    id: "confirmBtn"
+
+# App should show an error, not ask for PIN
+- assertVisible: TRY AGAIN
+
+- runFlow: ../../flows/teardown_helper.yaml

@@ -1,0 +1,8 @@
+maestro.bat : >& was unexpected at this time.
+At C:\Maestro Project\Practice Project\AgentApp Maestro Automation\scripts\run_regression.ps1:52 char:20
++     $outputItems = & maestro $maestroArgs 2>&1
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (>& was unexpected at this time.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+

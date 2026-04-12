@@ -1,0 +1,26 @@
+appId: com.fastpay.agent
+tags:
+  - regression
+  - negative
+---
+- runFlow: ../../flows/login_helper.yaml
+
+- tapOn: Sell Balance
+- tapOn: Mobile Number
+- inputText: ${Customer}
+- pressKey: back
+- doubleTapOn: "0"
+- inputText: "200" # ❌ Less than 250 IQD
+- tapOn: CONFIRM
+
+# Validate popup appears
+- assertVisible: "TRY AGAIN"
+
+# Click TRY AGAIN
+- tapOn: "TRY AGAIN"
+
+# Confirm we are NOT on the PIN page
+- assertNotVisible:
+    id: "editTextPin1"
+
+- runFlow: ../../flows/teardown_helper.yaml

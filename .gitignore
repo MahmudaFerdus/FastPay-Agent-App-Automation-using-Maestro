@@ -1,0 +1,8 @@
+# Do not upload secrets
+.env
+
+# optional: log files
+*.log
+
+# Windows system file
+Thumbs.db
